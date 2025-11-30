@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6hjeq7hmxlew"]
+
+[ext_resource type="PackedScene" uid="uid://rkdb3hwmmnnw" path="res://characters/player/player.tscn" id="1_2mgkc"]
+
+[node name="World" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(8.48073, 0, 0, 0, 0.019244075, 0, 0, 0, 7.184398, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_2mgkc")]
