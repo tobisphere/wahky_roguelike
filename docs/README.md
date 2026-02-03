@@ -26,9 +26,17 @@ We use a by scene approach and group assets as close to scenes as possible
 # Documentation
 
 ## Camera movement
-To find out why we use a head with the camera and some core principles you can read this documentation:
+To find out why i use a head with the camera and some core principles you can read this documentation:
 https://docs.godotengine.org/en/4.0/tutorials/3d/using_transforms.html
 
 We now put the camera on the head so we can split the rotation.
 - Where we move the player body on the x axis
 - And move the head of the player on the y axis
+
+## Pause
+To find out how i pause the game see this documentation:
+https://docs.godotengine.org/en/4.0/tutorials/scripting/pausing_games.html
+
+## Menu
+And to find out how i built the menu:
+https://docs.godotengine.org/en/stable/tutorials/ui/index.html
