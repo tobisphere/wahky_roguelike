@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.01
@@ -16,6 +15,11 @@ func _unhandled_input(event: InputEvent):
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+	#if event.is_action_pressed("pause"):
+	#	if get_tree().paused:
+	#		pause_menu.hide_menu()
+	#	else:
+	#		pause_menu.show_menu()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
