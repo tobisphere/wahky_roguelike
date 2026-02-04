@@ -1,4 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6hjeq7hmxlew"]
+[gd_scene load_steps=11 format=3 uid="uid://b6hjeq7hmxlew"]
+
+[ext_resource type="PackedScene" uid="uid://cyka806y4f8u" path="res://common/health_pickup.tscn" id="1_2mgkc"]
+[ext_resource type="PackedScene" uid="uid://bxmves4rsm13b" path="res://models/town/LowPoly_Tree01.fbx" id="2_pmfem"]
+[ext_resource type="PackedScene" uid="uid://cwtrcbbsxj7f0" path="res://models/town/LowPoly_TreeStump.fbx" id="3_712nc"]
+[ext_resource type="PackedScene" uid="uid://cr52q27305pci" path="res://models/town/LowPoly_Tree02.fbx" id="3_w32yo"]
+[ext_resource type="PackedScene" uid="uid://83gbefbrw7x1" path="res://models/town/LowPoly_Table01.fbx" id="5_712nc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2mgkc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,14 +33,195 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pmfem")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(8.48073, 0, 0, 0, 0.019244075, 0, 0, 0, 7.184398, 1.0642321, 0, 0.8173654)
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(8.48073, 0, 0, 0, 0.019244075, 0, 0, 0, 7.184398, 2.1408882, 0, -0.8875265)
 use_collision = true
-size = Vector3(4, 1, 5)
+size = Vector3(15, 1, 18)
 material = SubResource("StandardMaterial3D_2mgkc")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.468977, 0.47751904, 1.8947613)
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="LowPoly_Tree01" parent="Trees" instance=ExtResource("2_pmfem")]
+transform = Transform3D(0.78845114, 0, 0.6150974, 0, 1, 0, -0.6150974, 0, 0.78845114, 39.091797, -1.0125275, 15.182728)
+
+[node name="LowPoly_Tree03" parent="Trees" instance=ExtResource("2_pmfem")]
+transform = Transform3D(0.9954157, -0.06575759, -0.06945236, 0.0536882, 0.9851246, -0.16323945, 0.07915345, 0.15876234, 0.98413885, 11.349205, -1.3370152, 28.068024)
+
+[node name="LowPoly_Tree04" parent="Trees" instance=ExtResource("3_w32yo")]
+transform = Transform3D(0.45054042, -0.17590848, -1.0696926, 0.054617107, 1.0193125, -0.19835606, 0.910458, 0.025901273, 0.5412369, 11.349203, -1.0686073, -54.83027)
+
+[node name="LowPoly_TreeStump" parent="Trees" instance=ExtResource("3_712nc")]
+transform = Transform3D(2.946565, 0, 0, 0, 2.9652815, 0, 0, 0, 3.0453227, 11.287683, -0.7290721, -15.628885)
+
+[node name="LowPoly_Tree05" parent="Trees" instance=ExtResource("2_pmfem")]
+transform = Transform3D(-0.26195708, -0.052268125, -0.9636632, -0.19567233, 0.98066944, 0, 0.94503486, 0.18856218, -0.2671207, 40.09897, -0.526947, -30.964197)
+
+[node name="LowPoly_Tree02" parent="Trees" instance=ExtResource("3_w32yo")]
+transform = Transform3D(0.89378667, 0, 0.4484924, 0, 1, 0, -0.4484924, 0, 0.89378667, 20.849983, -1.0200405, -25.45315)
+
+[node name="LowPoly_Tree06" parent="Trees" instance=ExtResource("2_pmfem")]
+transform = Transform3D(-0.056448847, 0, -0.99840564, 0, 1, 0, 0.99840564, 0, -0.056448847, -16.661655, -1.505621, -10.455453)
+
+[node name="LowPoly_Tree07" parent="Trees" instance=ExtResource("3_w32yo")]
+transform = Transform3D(-0.25119108, 0, -0.9679377, 0, 1, 0, 0.9679377, 0, -0.25119108, 25.930222, -1.513134, 2.5818386)
+
+[node name="LowPoly_Tree08" parent="Trees" instance=ExtResource("2_pmfem")]
+transform = Transform3D(-0.71516514, -0.07615478, -0.69479436, 0.053688195, 0.9851246, -0.16323945, 0.6968906, -0.15404543, -0.70043826, -8.08555, -1.8301086, -39.81755)
+
+[node name="LowPoly_Tree09" parent="Trees" instance=ExtResource("3_w32yo")]
+transform = Transform3D(-0.9818313, 0.096367545, 0.29725918, 0.05461712, 1.0193125, -0.19835608, -0.2606301, -0.1494255, -1.1613859, 54.293137, -1.5617008, 14.78124)
+
+[node name="LowPoly_TreeStump2" parent="Trees" instance=ExtResource("3_712nc")]
+transform = Transform3D(-1.940678, 0, -2.2915218, 0, 2.9652815, 0, 2.2172089, 0, -2.0057216, 24.83569, -0.5169635, -11.084023)
+
+[node name="LowPoly_Tree10" parent="Trees" instance=ExtResource("2_pmfem")]
+transform = Transform3D(-0.5385816, -0.10746283, 0.8356926, -0.19567233, 0.98066944, -3.5899252e-09, -0.819538, -0.16352189, -0.54919803, -9.859883, -1.0200405, 23.40603)
+
+[node name="LowPoly_Tree11" parent="Trees" instance=ExtResource("2_pmfem")]
+transform = Transform3D(-0.93867785, -0.107462816, 0.32762277, -0.15427811, 0.98066944, -0.12035754, -0.3083555, -0.16352186, -0.9371117, -12.596609, -5.065652, -15.500639)
+
+[node name="LowPoly_Tree12" parent="Trees" instance=ExtResource("2_pmfem")]
+transform = Transform3D(-0.661079, 0.16317081, 0.73235965, 0.05223193, 0.9837069, -0.17202331, -0.74849635, -0.0754686, -0.65883076, 8.644598, -2.3714468, -7.1360445)
+
+[node name="LowPoly_Tree13" parent="Trees" instance=ExtResource("3_w32yo")]
+transform = Transform3D(0.30823463, 0.15038657, 1.1444576, 0.046098273, 1.0191698, -0.2024126, -0.96838564, 0.0963834, 0.35464248, -48.91201, -0.8312684, 49.04902)
+
+[node name="LowPoly_TreeStump3" parent="Trees" instance=ExtResource("3_712nc")]
+transform = Transform3D(-2.1204722, 0.016906694, 2.1144354, -0.0021992754, 2.9651616, -0.02736199, -2.0459332, -0.020710096, -2.1914403, -21.6474, -0.84392285, 20.879715)
+
+[node name="LowPoly_Tree14" parent="Trees" instance=ExtResource("2_pmfem")]
+transform = Transform3D(0.8435585, 0.17412856, 0.5080247, -0.2039599, 0.9789745, 0.0031193057, -0.4968, -0.10624803, 0.86133724, -47.11381, -0.6020514, 5.7794724)
+
+[node name="LowPoly_Tree15" parent="Trees" instance=ExtResource("3_w32yo")]
+transform = Transform3D(-0.9546046, 0.005701497, 0.2978221, 0.003362568, 0.9999594, -0.008365315, -0.2978575, -0.006984127, -0.95458513, -35.351696, -1.053746, 21.31183)
+
+[node name="LowPoly_Tree16" parent="Trees" instance=ExtResource("2_pmfem")]
+transform = Transform3D(0.733838, 0.0057014967, 0.679301, -0.008928409, 0.9999589, 0.0012523369, -0.6792662, -0.0069841333, 0.73385894, 2.0537243, -1.646063, 36.568787)
+
+[node name="LowPoly_Tree17" parent="Trees" instance=ExtResource("3_w32yo")]
+transform = Transform3D(0.8528283, 0.0057014823, 0.5221608, -0.008509345, 0.9999592, 0.0029793878, -0.522123, -0.006984138, 0.85284173, -19.545149, -1.8025022, -2.386382)
+
+[node name="LowPoly_Tree18" parent="Trees" instance=ExtResource("2_pmfem")]
+transform = Transform3D(0.99883586, -0.04653626, 0.012742588, 0.047958273, 0.9865257, -0.15642092, -0.0052919146, 0.1568498, 0.9876088, -24.506613, -1.7131228, 51.745487)
+
+[node name="LowPoly_Tree19" parent="Trees" instance=ExtResource("3_w32yo")]
+transform = Transform3D(0.52591705, -0.16728795, -1.021427, 0.057689488, 1.0205419, -0.18813492, 0.8689002, 0.03349654, 0.6307283, -31.486252, -1.9818472, -30.858494)
+
+[node name="LowPoly_TreeStump4" parent="Trees" instance=ExtResource("3_712nc")]
+transform = Transform3D(2.9360516, 0.016906582, 0.25645792, -0.01847303, 2.9651623, 0.019731686, -0.24802221, -0.02071005, 3.0344422, -28.244331, -1.3879428, 8.205645)
+
+[node name="LowPoly_Tree20" parent="Trees" instance=ExtResource("2_pmfem")]
+transform = Transform3D(-0.1825531, -0.03061082, -0.9827199, -0.18789901, 0.9821792, 0.004310725, 0.965075, 0.18543895, -0.18505149, -4.6094055, -1.4106281, -7.587058)
+
+[node name="Parkour" type="Node3D" parent="."]
+
+[node name="Box1" type="CSGBox3D" parent="Parkour"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.22134, 0.47751904, 1.8947613)
 use_collision = true
 size = Vector3(1.6806641, 1.3387451, 1.5717773)
 material = SubResource("StandardMaterial3D_tsgde")
+
+[node name="Health" parent="Parkour" instance=ExtResource("1_2mgkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.173975, 0.8176513, 1.8964295)
+
+[node name="Box2" type="CSGBox3D" parent="Parkour"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.159313, 1.0717058, -0.7332294)
+use_collision = true
+size = Vector3(1.6806641, 1.3387451, 1.5717773)
+material = SubResource("StandardMaterial3D_tsgde")
+
+[node name="Health2" parent="Parkour" instance=ExtResource("1_2mgkc")]
+transform = Transform3D(0.5815552, 0, -0.81350696, 0, 1, 0, 0.81350696, 0, 0.5815552, 14.185685, 1.5137005, -0.81915724)
+
+[node name="Box3" type="CSGBox3D" parent="Parkour"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.208513, 1.9549227, -1.5523866)
+use_collision = true
+size = Vector3(1.6806641, 1.3387451, 1.5717773)
+material = SubResource("StandardMaterial3D_tsgde")
+
+[node name="Health3" parent="Parkour" instance=ExtResource("1_2mgkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.234886, 2.3969173, -1.6383145)
+
+[node name="Box4" type="CSGBox3D" parent="Parkour"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.831568, 2.6253004, -2.9633796)
+use_collision = true
+size = Vector3(1.6806641, 1.3387451, 1.5717773)
+material = SubResource("StandardMaterial3D_tsgde")
+
+[node name="Health4" parent="Parkour" instance=ExtResource("1_2mgkc")]
+transform = Transform3D(0.80529755, 0, -0.5928709, 0, 1, 0, 0.5928709, 0, 0.80529755, 20.784203, 2.9654326, -2.9617114)
+
+[node name="Box5" type="CSGBox3D" parent="Parkour"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.76954, 3.2194872, -5.5913706)
+use_collision = true
+size = Vector3(1.6806641, 1.3387451, 1.5717773)
+material = SubResource("StandardMaterial3D_tsgde")
+
+[node name="Health5" parent="Parkour" instance=ExtResource("1_2mgkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.795912, 3.6614819, -5.677298)
+
+[node name="Box6" type="CSGBox3D" parent="Parkour"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.81874, 4.102704, -6.4105277)
+use_collision = true
+size = Vector3(1.6806641, 1.3387451, 1.5717773)
+material = SubResource("StandardMaterial3D_tsgde")
+
+[node name="Health6" parent="Parkour" instance=ExtResource("1_2mgkc")]
+transform = Transform3D(0.5532462, 0, 0.8330178, 0, 1, 0, -0.8330178, 0, 0.5532462, 26.845114, 4.5446987, -6.496455)
+
+[node name="Box7" type="CSGBox3D" parent="Parkour"]
+transform = Transform3D(0.9750371, 0, 0.22204204, 0, 1, 0, -0.22204204, 0, 0.9750371, 30.333647, 4.398798, -7.7779946)
+use_collision = true
+size = Vector3(1.6806641, 1.3387451, 1.5717773)
+material = SubResource("StandardMaterial3D_tsgde")
+
+[node name="Health7" parent="Parkour" instance=ExtResource("1_2mgkc")]
+transform = Transform3D(0.9750371, 0, 0.22204204, 0, 1, 0, -0.22204204, 0, 0.9750371, 30.287834, 4.73893, -7.765851)
+
+[node name="Box8" type="CSGBox3D" parent="Parkour"]
+transform = Transform3D(0.9750371, 0, 0.22204204, 0, 1, 0, -0.22204204, 0, 0.9750371, 32.614758, 4.992985, -10.992737)
+use_collision = true
+size = Vector3(1.6806641, 1.3387451, 1.5717773)
+material = SubResource("StandardMaterial3D_tsgde")
+
+[node name="Health8" parent="Parkour" instance=ExtResource("1_2mgkc")]
+transform = Transform3D(0.6137341, 0, 0.78951275, 0, 1, 0, -0.78951275, 0, 0.6137341, 32.62139, 5.4349794, -11.082375)
+
+[node name="Box9" type="CSGBox3D" parent="Parkour"]
+transform = Transform3D(0.9750371, 0, 0.22204204, 0, 1, 0, -0.22204204, 0, 0.9750371, 35.405952, 5.8762016, -12.468495)
+use_collision = true
+size = Vector3(1.6806641, 1.3387451, 1.5717773)
+material = SubResource("StandardMaterial3D_tsgde")
+
+[node name="Health9" parent="Parkour" instance=ExtResource("1_2mgkc")]
+transform = Transform3D(-0.29839128, 0, -0.95444363, 0, 1, 0, 0.95444363, 0, -0.29839128, 35.412582, 6.3181963, -12.558134)
+
+[node name="Box10" type="CSGBox3D" parent="Parkour"]
+transform = Transform3D(0.9750371, 0, 0.22204204, 0, 1, 0, -0.22204204, 0, 0.9750371, 38.625263, 6.5465794, -14.648737)
+use_collision = true
+size = Vector3(1.6806641, 1.3387451, 1.5717773)
+material = SubResource("StandardMaterial3D_tsgde")
+
+[node name="Health10" parent="Parkour" instance=ExtResource("1_2mgkc")]
+transform = Transform3D(0.9750371, 0, 0.22204204, 0, 1, 0, -0.22204204, 0, 0.9750371, 38.579453, 6.8867116, -14.636594)
+
+[node name="Box11" type="CSGBox3D" parent="Parkour"]
+transform = Transform3D(0.9750371, 0, 0.22204204, 0, 1, 0, -0.22204204, 0, 0.9750371, 40.906372, 7.140766, -17.86348)
+use_collision = true
+size = Vector3(1.6806641, 1.3387451, 1.5717773)
+material = SubResource("StandardMaterial3D_tsgde")
+
+[node name="Health11" parent="Parkour" instance=ExtResource("1_2mgkc")]
+transform = Transform3D(0.9750371, 0, 0.22204204, 0, 1, 0, -0.22204204, 0, 0.9750371, 40.913006, 7.582761, -17.953117)
+
+[node name="Box12" type="CSGBox3D" parent="Parkour"]
+transform = Transform3D(0.9750371, 0, 0.22204204, 0, 1, 0, -0.22204204, 0, 0.9750371, 43.69757, 8.023983, -19.33924)
+use_collision = true
+size = Vector3(1.6806641, 1.3387451, 1.5717773)
+material = SubResource("StandardMaterial3D_tsgde")
+
+[node name="Health12" parent="Parkour" instance=ExtResource("1_2mgkc")]
+transform = Transform3D(0.8565104, 0, -0.51612973, 0, 1, 0, 0.51612973, 0, 0.8565104, 43.704205, 8.465978, -19.428877)
+
+[node name="LowPoly_Table01" parent="." instance=ExtResource("5_712nc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0514102, 16.385387)
