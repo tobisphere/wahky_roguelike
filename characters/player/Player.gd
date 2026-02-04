@@ -3,9 +3,11 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.01
+var HEALTH = 100
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var health_label = %HealthLabel
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -15,11 +17,6 @@ func _unhandled_input(event: InputEvent):
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
-	#if event.is_action_pressed("pause"):
-	#	if get_tree().paused:
-	#		pause_menu.hide_menu()
-	#	else:
-	#		pause_menu.show_menu()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -38,3 +35,12 @@ func _physics_process(delta: float) -> void:
 		velocity.z = 0.0
 
 	move_and_slide()
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	if area.is_in_group("Health"):
+		set_health(HEALTH + 20)
+		print(HEALTH)
+
+func set_health(new_health: int) -> void:
+	HEALTH = new_health
+	health_label.text = "Health: " + str(HEALTH)

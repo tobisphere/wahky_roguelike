@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyka806y4f8u"]
+
+[ext_resource type="Script" uid="uid://m7e5v2y4gys1" path="res://common/Health.gd" id="1_enrbi"]
+[ext_resource type="PackedScene" uid="uid://bb52csctmy0mb" path="res://models/town/LowPoly_Heart.fbx" id="2_o2du0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wcl1l"]
+radius = 1.0
+
+[node name="Health" type="Area3D" groups=["Health"]]
+script = ExtResource("1_enrbi")
+
+[node name="PickupRange" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0991063, 0)
+shape = SubResource("SphereShape3D_wcl1l")
+
+[node name="LowPoly_Heart" parent="." instance=ExtResource("2_o2du0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89849126, 0)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
